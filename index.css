@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+}
+h1, h2, p, button{
+    margin: 0;
+}
+h1 {
+    font-size: 36px;
+    color: #FFFFFF;
+}
+h2 {
+    font-size: 24px;
+    color: #10B981;
+}
+p {
+    font-size: 16px;
+    color: #D5D4D8;
+    margin-top: 10px;
+}
+label {
+    font-size: 16px;
+    color: #D5D4D8;
+}
+#pwLength {
+    width: 205px;
+    font-size: 16px;
+}
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F2937;
+    padding: 0px;
+}
+.header {
+    margin: 0;
+}
+.options {
+    margin: 51px 0px 0px 52px;
+}
+#generateBtn {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 25px;
+    padding: 10px 17px 10px 17px;
+    border-radius: 6px;
+    background-color: #10B981;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+.separator {
+    height: 1px;
+    background-color: #2F3E53;
+    margin-top: 35px;
+    margin-left: 52px;
+    width: 446px;
+}
+.generated-passwords {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 446px;
+    margin-left: 52px;
+    padding: 0;
+}
+#Password1, #Password2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #10B981;
+    background-color: #273549;
+    width: 211px;
+    height: 39px;
+    padding: 4px 16px 4px 16px;
+    border-radius: 6px;
+}
+#Password1 {
+    margin-top: 35px;
+}
+#Password2 {
+    margin: 35px 0px 0px 24px;
+}
+#errorMessage {
+    color: #EF4444;
+    font-size: 14px;
+}

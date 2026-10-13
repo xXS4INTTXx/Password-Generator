@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Password Generator</h1>
+            <h2>Generate a strong password easily</h2>
+            <p>Never use an insecure password again.</p>
+        </div>
+        <div class="options">
+            <label for="pwLength">Password Length:</label>
+            <input type="number" id="pwLength" min="8" max="16" onblur="if(this.value > 16) this.value = 16; else if(this.value < 8) this.value = 8;" placeholder="Length between 8 and 16"> <!-- onblur="if(this.value > 16) this.value = 16; if(this.value < 8) this.value = 8;" -->
+            <br>
+            <label for="includeSymbols">Include Symbols:</label>
+            <input type="checkbox" id="includeSymbols">
+            <br>
+            <label for="includeNumbers">Include Numbers:</label>
+            <input type="checkbox" id="includeNumbers">
+            <br>
+            <label for="includeUppercase">Include Uppercase Letters:</label>
+            <input type="checkbox" id="includeUppercase">
+            <br>
+            <label for="includeLowercase">Include Lowercase Letters:</label>
+            <input type="checkbox" id="includeLowercase">
+            <br>
+            <button id="generateBtn" onclick="generate()">Generate Password</button>
+        </div>
+        <div class="errors">
+            <p id="errorMessage"></p>
+        </div>
+        <div class="separator">
+        </div>
+        <div class="generated-passwords">
+            <p id="Password1"></p>
+            <p id="Password2"></p>
+        </div>
+    </div>
+</body>
+</html>
