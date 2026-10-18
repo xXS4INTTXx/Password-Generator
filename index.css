@@ -1,91 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    font-family: Arial, sans-serif;
 }
-h1, h2, p, button{
+
+h1, h2, p, button {
     margin: 0;
 }
+
 h1 {
     font-size: 36px;
     color: #FFFFFF;
 }
+
 h2 {
     font-size: 24px;
     color: #10B981;
 }
+
 p {
     font-size: 16px;
     color: #D5D4D8;
     margin-top: 10px;
 }
+
 label {
     font-size: 16px;
     color: #D5D4D8;
 }
+
 #pwLength {
     width: 205px;
+    max-width: 100%;
+    min-height: 40px;
     font-size: 16px;
 }
+
 .container {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #1F2937;
-    padding: 0px;
+    padding: 40px 24px;
 }
+
+.header,
+.options,
+.errors,
+.separator,
+.generated-passwords {
+    width: min(100%, 500px);
+}
+
 .header {
     margin: 0;
 }
+
 .options {
-    margin: 51px 0px 0px 52px;
+    margin-top: 36px;
 }
+
+.option-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 40px;
+}
+
+.option-row input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+    flex: 0 0 auto;
+    accent-color: #10B981;
+}
+
 #generateBtn {
+    min-height: 44px;
     font-size: 16px;
     font-weight: 500;
-    margin-top: 25px;
-    padding: 10px 17px 10px 17px;
+    margin-top: 20px;
+    padding: 10px 17px;
     border-radius: 6px;
     background-color: #10B981;
     color: #FFFFFF;
     border: none;
     cursor: pointer;
 }
+
+#generateBtn:focus-visible,
+#pwLength:focus-visible,
+.option-row input:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+}
+
+.errors {
+    min-height: 24px;
+}
+
 .separator {
     height: 1px;
     background-color: #2F3E53;
-    margin-top: 35px;
-    margin-left: 52px;
-    width: 446px;
+    margin-top: 24px;
 }
+
 .generated-passwords {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 446px;
-    margin-left: 52px;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 24px;
 }
-#Password1, #Password2 {
+
+#Password1,
+#Password2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
+    min-height: 47px;
+    margin: 0;
+    padding: 4px 12px;
+    border-radius: 6px;
     font-size: 16px;
     font-weight: bold;
     color: #10B981;
     background-color: #273549;
-    width: 211px;
-    height: 39px;
-    padding: 4px 16px 4px 16px;
-    border-radius: 6px;
+    overflow-wrap: anywhere;
 }
-#Password1 {
-    margin-top: 35px;
-}
-#Password2 {
-    margin: 35px 0px 0px 24px;
-}
+
 #errorMessage {
     color: #EF4444;
     font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        justify-content: flex-start;
+        padding: 40px 20px 32px;
+    }
+
+    h1 {
+        font-size: clamp(28px, 8vw, 36px);
+    }
+
+    h2 {
+        font-size: clamp(20px, 5.5vw, 24px);
+        margin-top: 8px;
+    }
+
+    .options {
+        margin-top: 32px;
+    }
+
+    #pwLength {
+        width: min(205px, 58%);
+    }
+
+    .generated-passwords {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
 }
